@@ -75,27 +75,36 @@ figcaption .no{color:var(--ink3);font-size:11.5px;display:block}
 .lb .nx{right:12px;top:50%;transform:translateY(-50%)}
 
 
-.contact{background:#fff;border-top:1px solid var(--line);padding:34px 0 30px}
-.ct{max-width:1150px;margin:0 auto;padding:0 20px;display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
-.ct .qr{width:118px;height:118px;border:1px solid var(--line);border-radius:8px;padding:6px;background:#fff;flex:none}
-.ct .info{flex:1 1 320px;min-width:0}
-.ct .lbl{font-size:11.5px;letter-spacing:.2em;color:var(--ink3);margin-bottom:6px}
-.ct .nm{font-size:21px;font-weight:700;color:var(--accent);line-height:1.3}
-.ct .ttl{font-size:13px;color:var(--ink2);margin-top:3px}
-.ct .tel{display:inline-block;margin-top:10px;font-size:22px;font-weight:700;color:var(--ink);
-  text-decoration:none;letter-spacing:.02em}
-.ct .tel:hover{color:var(--accent)}
-.ct .co{margin-top:12px;font-size:13.5px;color:var(--ink2);line-height:1.8}
-.ct .co b{color:var(--ink);font-weight:700}
-.ct .qrcap{font-size:11.5px;color:var(--ink3);text-align:center;margin-top:5px;flex:none;width:118px}
-.ct .lg{height:34px;opacity:.9;margin-bottom:12px}
+.contact{background:#fff;border-top:1px solid var(--line);padding:38px 0 34px}
+.ct{max-width:660px;margin:0 auto;padding:22px 26px 24px;border:1px solid var(--line);
+  border-radius:12px;background:var(--card)}
+.ct .hd{text-align:center;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.ct .hd img{height:36px;opacity:.9;display:block;margin:0 auto 9px}
+.ct .hd .lbl{font-size:11.5px;letter-spacing:.28em;color:var(--ink3)}
+.ct .row{display:flex;gap:26px;align-items:center;padding-top:18px}
+.ct .qrbox{flex:none;text-align:center}
+.ct .qrbox img{width:122px;height:122px;border:1px solid var(--line);border-radius:8px;
+  padding:6px;background:#fff;display:block}
+.ct .qrbox span{display:block;font-size:11.5px;color:var(--ink3);margin-top:6px}
+.ct .info{flex:1;min-width:0}
+.ct .nm{font-size:22px;font-weight:700;color:var(--accent);line-height:1.25}
 .ct .nm a{color:inherit;text-decoration:none;border-bottom:2px solid rgba(15,76,92,.25)}
 .ct .nm a:hover{border-bottom-color:var(--accent)}
-.ct .more{display:inline-flex;align-items:center;gap:7px;margin-top:13px;padding:8px 17px;
+.ct .ttl{font-size:12.5px;color:var(--ink3);margin-top:4px;line-height:1.6}
+.ct .tel{display:inline-block;margin:11px 0 12px;font-size:23px;font-weight:700;color:var(--ink);
+  text-decoration:none;letter-spacing:.01em}
+.ct .tel:hover{color:var(--accent)}
+.ct .co{font-size:13px;color:var(--ink2);line-height:1.75}
+.ct .co b{color:var(--ink)}
+.ct .more{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:7px 16px;
   border:1px solid var(--accent);border-radius:999px;color:var(--accent);text-decoration:none;
-  font-size:13.5px;font-weight:700;transition:.15s}
+  font-size:13px;font-weight:700;transition:.15s}
 .ct .more:hover{background:var(--accent);color:#fff}
-@media(max-width:560px){.ct{gap:18px}}
+@media(max-width:560px){
+  .ct{padding:20px 18px 22px}
+  .ct .row{flex-direction:column;gap:18px;text-align:center}
+  .ct .qrbox{order:2}
+}
 footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-top:24px;line-height:1.7}
 @media(max-width:600px){#map{height:320px}}
 </style>
@@ -131,21 +140,22 @@ footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-t
 
 <section class="contact">
   <div class="ct">
-    <div>
-      <img class="qr" src="assets/line-qr.png" alt="加 LINE 張現傑">
-      <div class="qrcap">掃碼加 LINE</div>
+    <div class="hd">
+      <img src="assets/logo-ruihe.png" alt="瑞禾開發">
+      <div class="lbl">專 案 窗 口</div>
     </div>
-    <div class="info">
-      <img class="lg" src="assets/logo-ruihe.png" alt="瑞禾">
-      <div class="lbl">專案窗口</div>
-      <div class="nm"><a href="https://mac2good909777-commits.github.io/about-mac/" target="_blank" rel="noopener">張現傑</a></div>
-      <div class="ttl">業務總監｜不動產經紀人（108）中市經紀字第 01847 號</div>
-      <a class="tel" href="tel:0423803560">04-2380-3560</a>
-      <div class="co">
-        <b>瑞禾不動產經紀股份有限公司</b><br>
-        臺中市南屯區益豐路四段 91 號
+    <div class="row">
+      <div class="qrbox">
+        <img src="assets/line-qr.png" alt="加 LINE 張現傑">
+        <span>掃碼加 LINE</span>
       </div>
-      <a class="more" href="https://mac2good909777-commits.github.io/about-mac/" target="_blank" rel="noopener">關於現傑　→</a>
+      <div class="info">
+        <div class="nm"><a href="https://mac2good909777-commits.github.io/about-mac/" target="_blank" rel="noopener">張現傑</a></div>
+        <div class="ttl">業務總監｜不動產經紀人（108）中市經紀字第 01847 號</div>
+        <a class="tel" href="tel:0423803560">04-2380-3560</a>
+        <div class="co"><b>瑞禾不動產經紀股份有限公司</b><br>臺中市南屯區益豐路四段 91 號</div>
+        <a class="more" href="https://mac2good909777-commits.github.io/about-mac/" target="_blank" rel="noopener">關於現傑　→</a>
+      </div>
     </div>
   </div>
 </section>

@@ -65,6 +65,12 @@ figcaption .no{color:var(--ink3);font-size:11.5px;display:block}
 .lb .cap{color:#e8e8e6;font-size:13.5px;margin-top:12px;text-align:center;max-width:60ch}
 .lb button{position:absolute;background:rgba(255,255,255,.13);color:#fff;border:0;width:46px;height:46px;
   border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+.lb .speed{margin-top:10px;display:none;gap:7px;align-items:center}
+.lb .speed.on{display:flex}
+.lb .speed span{color:#9fb3bb;font-size:12.5px;margin-right:2px}
+.lb .speed b{position:static;width:auto;height:auto;border-radius:999px;background:rgba(255,255,255,.13);
+  color:#fff;border:0;padding:5px 13px;font-size:13px;font-weight:400;cursor:pointer;line-height:1.4}
+.lb .speed b.on{background:#2e7d94;font-weight:700}
 .lb .x{top:16px;right:16px}.lb .pv{left:12px;top:50%;transform:translateY(-50%)}
 .lb .nx{right:12px;top:50%;transform:translateY(-50%)}
 
@@ -113,6 +119,7 @@ footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-t
   <button class="pv" onclick="step(-1)">‹</button>
   <button class="nx" onclick="step(1)">›</button>
   <div id="lbbody"></div>
+  <div class="speed" id="speed"><span>播放速度</span></div>
   <div class="cap" id="lbcap"></div>
 </div>
 
@@ -210,7 +217,16 @@ document.getElementById("filters").addEventListener("click", e=>{
 });
 
 /* ---------- lightbox ---------- */
-let idx=0;
+let idx=0, RATE=0.5;
+const RATES=[0.25,0.5,0.75,1];
+document.getElementById("speed").insertAdjacentHTML("beforeend",
+  RATES.map(r=>`<b data-r="${r}" class="${r===RATE?'on':''}">${r}×</b>`).join(""));
+document.getElementById("speed").addEventListener("click", e=>{
+  const b=e.target.closest("b"); if(!b) return;
+  RATE=parseFloat(b.dataset.r);
+  document.querySelectorAll("#speed b").forEach(x=>x.classList.toggle("on", x===b));
+  const v=document.querySelector("#lbbody video"); if(v) v.playbackRate=RATE;
+});
 const vis=()=>[...document.querySelectorAll(".cat:not([hidden]) figure")];
 document.getElementById("gallery").addEventListener("click", e=>{
   const f=e.target.closest("figure"); if(!f) return; idx=vis().indexOf(f); show();
@@ -222,10 +238,14 @@ function show(){
     ? `<video src="videos/${f.dataset.v}.mp4" poster="videos/${f.dataset.v}.jpg" controls autoplay playsinline></video>`
     : `<img src="photos/${f.dataset.f}" alt="">`;
   document.getElementById("lbcap").textContent = f.querySelector("img").alt;
+  const vd = body.querySelector("video");
+  document.getElementById("speed").classList.toggle("on", !!vd);
+  if(vd){ vd.playbackRate=RATE; vd.addEventListener("loadedmetadata",()=>vd.playbackRate=RATE); }
   document.getElementById("lb").classList.add("on");
 }
 function step(d){ idx+=d; show(); }
-function closeLb(){ document.getElementById("lb").classList.remove("on"); document.getElementById("lbbody").innerHTML=""; }
+function closeLb(){ document.getElementById("lb").classList.remove("on");
+  document.getElementById("lbbody").innerHTML=""; document.getElementById("speed").classList.remove("on"); }
 document.getElementById("lb").addEventListener("click", e=>{ if(e.target.id==="lb") closeLb(); });
 document.addEventListener("keydown", e=>{
   if(!document.getElementById("lb").classList.contains("on")) return;
@@ -260,6 +280,8 @@ Object.entries(VPOS).forEach(([k,ll])=>{
         justify-content:center;font:700 15px/1 sans-serif">${VNO[k]}</div>`})}).addTo(map);
   m.bindPopup(`<b>影片 ${VNO[k]}</b><br>${VTITLE[k]}<br><video src="videos/${k}.mp4" poster="videos/${k}.jpg"
      controls playsinline style="width:260px;margin-top:6px;border-radius:4px"></video>`,{maxWidth:280});
+  m.on("popupopen", ()=>{ const v=m.getPopup().getElement().querySelector("video");
+    if(v){ v.playbackRate=RATE; v.addEventListener("loadedmetadata",()=>v.playbackRate=RATE); } });
   m.on("dragend", dump);
   markers[k]=m;
 });

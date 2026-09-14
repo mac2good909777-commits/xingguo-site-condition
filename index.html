@@ -74,6 +74,22 @@ figcaption .no{color:var(--ink3);font-size:11.5px;display:block}
 .lb .x{top:16px;right:16px}.lb .pv{left:12px;top:50%;transform:translateY(-50%)}
 .lb .nx{right:12px;top:50%;transform:translateY(-50%)}
 
+
+.contact{background:#fff;border-top:1px solid var(--line);padding:34px 0 30px}
+.ct{max-width:1150px;margin:0 auto;padding:0 20px;display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.ct .qr{width:118px;height:118px;border:1px solid var(--line);border-radius:8px;padding:6px;background:#fff;flex:none}
+.ct .info{flex:1 1 320px;min-width:0}
+.ct .lbl{font-size:11.5px;letter-spacing:.2em;color:var(--ink3);margin-bottom:6px}
+.ct .nm{font-size:21px;font-weight:700;color:var(--accent);line-height:1.3}
+.ct .ttl{font-size:13px;color:var(--ink2);margin-top:3px}
+.ct .tel{display:inline-block;margin-top:10px;font-size:22px;font-weight:700;color:var(--ink);
+  text-decoration:none;letter-spacing:.02em}
+.ct .tel:hover{color:var(--accent)}
+.ct .co{margin-top:12px;font-size:13.5px;color:var(--ink2);line-height:1.8}
+.ct .co b{color:var(--ink);font-weight:700}
+.ct .qrcap{font-size:11.5px;color:var(--ink3);text-align:center;margin-top:5px;flex:none;width:118px}
+.ct .lg{height:34px;opacity:.9;margin-bottom:12px}
+@media(max-width:560px){.ct{gap:18px}}
 footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-top:24px;line-height:1.7}
 @media(max-width:600px){#map{height:320px}}
 </style>
@@ -105,6 +121,26 @@ footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-t
   <h2>分類照片</h2>
   <div class="filters" id="filters"></div>
   <div id="gallery"></div>
+</section>
+
+<section class="contact">
+  <div class="ct">
+    <div>
+      <img class="qr" src="assets/line-qr.png" alt="加 LINE 張現傑">
+      <div class="qrcap">掃碼加 LINE</div>
+    </div>
+    <div class="info">
+      <img class="lg" src="assets/logo-ruihe.png" alt="瑞禾">
+      <div class="lbl">專案窗口</div>
+      <div class="nm">張現傑</div>
+      <div class="ttl">業務總監｜不動產經紀人（108）中市經紀字第 01847 號</div>
+      <a class="tel" href="tel:0423803560">04-2380-3560</a>
+      <div class="co">
+        <b>瑞禾不動產經紀股份有限公司</b><br>
+        臺中市南屯區益豐路四段 91 號
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>

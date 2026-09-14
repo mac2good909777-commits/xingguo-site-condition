@@ -90,7 +90,7 @@ footer{background:#12222a;color:#9fb3bb;padding:22px 0;font-size:12.5px;margin-t
 <section class="wrap">
   <h2>影片拍攝位置</h2>
   <div id="map"></div>
-  <p class="maphint">標號 ①–⑥ 對應下方影片。<b>位置係依影像內容判讀之推定值</b>，可拖曳校正。
+  <p class="maphint">紅色 A–D 為現場定位點；深藍 ①–⑥ 對應下方影片，<b>位置為依影像判讀之推定值</b>，可拖曳校正。
     <button onclick="toggleEdit()" id="ebtn">開啟拖曳校正</button></p>
   <textarea id="coords" readonly></textarea>
 </section>
@@ -177,6 +177,8 @@ const VPOS = {
   v04:[24.12711,120.55916], v05:[24.12691,120.55941], v06:[24.12688,120.55924]
 };
 const VNO = {v01:"①",v02:"②",v03:"③",v04:"④",v05:"⑤",v06:"⑥"};
+/* 業主標示之現場定位點 A–D */
+const SPOTS = {A:[24.12728,120.55936], B:[24.12685,120.55900], C:[24.12675,120.55917], D:[24.12692,120.55922]};
 const VTITLE = {};
 CATS.forEach(c=>c.items.forEach(i=>{ if(i.v) VTITLE[i.v]=i.t; }));
 
@@ -239,6 +241,14 @@ document.addEventListener("keydown", e=>{
 const map = L.map("map").setView([24.12726,120.55915], 18);
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   {maxZoom:20, attribution:"Imagery © Esri, Maxar, Earthstar Geographics"}).addTo(map);
+
+Object.entries(SPOTS).forEach(([k,ll])=>{
+  L.marker(ll,{icon:L.divIcon({className:"",iconSize:[26,26],iconAnchor:[13,13],
+    html:`<div style="width:26px;height:26px;border-radius:5px;background:#c0392b;color:#fff;
+      border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.5);display:flex;align-items:center;
+      justify-content:center;font:700 14px/1 sans-serif">${k}</div>`})}).addTo(map)
+   .bindPopup(`<b>定位點 ${k}</b>`);
+});
 
 const markers={};
 Object.entries(VPOS).forEach(([k,ll])=>{

@@ -171,11 +171,8 @@ const CATS = [
   ]}
 ];
 
-/* 影片推定拍攝位置（可拖曳校正） */
-const VPOS = {
-  v01:[24.12768,120.55893], v02:[24.12741,120.55897], v03:[24.12717,120.55881],
-  v04:[24.12711,120.55916], v05:[24.12691,120.55941], v06:[24.12688,120.55924]
-};
+/* 影片歸屬之現場定位點（依畫面內容判讀，可拖曳校正） */
+const VSPOT = {v01:"A", v02:"B", v03:"B", v04:"C", v05:"D", v06:"D"};
 const VNO = {v01:"①",v02:"②",v03:"③",v04:"④",v05:"⑤",v06:"⑥"};
 /* 業主標示之現場定位點 A–D */
 const SPOTS = {A:[24.12728,120.55936], B:[24.12685,120.55900], C:[24.12675,120.55917], D:[24.12692,120.55922]};
@@ -195,7 +192,7 @@ document.getElementById("gallery").innerHTML = CATS.map(c=>`
   <div class="grid">
    ${c.items.map(i=> i.v ? `
     <figure class="vid" data-v="${i.v}">
-      <span class="vbadge">影片 ${VNO[i.v]}</span><span class="play"></span>
+      <span class="vbadge">影片 ${VNO[i.v]}・定位點 ${VSPOT[i.v]}</span><span class="play"></span>
       <img src="videos/${i.v}.jpg" alt="${i.t}" loading="lazy">
       <figcaption><span class="no">${i.v.toUpperCase()}</span>${i.t}</figcaption>
     </figure>` : `
@@ -238,7 +235,7 @@ document.addEventListener("keydown", e=>{
 });
 
 /* ---------- map ---------- */
-const map = L.map("map").setView([24.12726,120.55915], 18);
+const map = L.map("map").setView([24.12695,120.55919], 18);
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   {maxZoom:20, attribution:"Imagery © Esri, Maxar, Earthstar Geographics"}).addTo(map);
 
@@ -250,6 +247,18 @@ Object.entries(SPOTS).forEach(([k,ll])=>{
    .bindPopup(`<b>定位點 ${k}</b>`);
 });
 
+/* 同一定位點有多支影片時，以小幅偏移錯開 */
+const seen={};
+const VPOS={};
+Object.entries(VSPOT).forEach(([v,s])=>{
+  const n = seen[s] = (seen[s]||0);
+  seen[s]++;
+  const total = Object.values(VSPOT).filter(x=>x===s).length;
+  const r = total>1 ? 0.000055 : 0;
+  const a = (n/total)*2*Math.PI - Math.PI/2;
+  VPOS[v] = [SPOTS[s][0] + r*Math.sin(a)*0.92, SPOTS[s][1] + r*Math.cos(a)];
+});
+
 const markers={};
 Object.entries(VPOS).forEach(([k,ll])=>{
   const m = L.marker(ll,{draggable:false, title:VTITLE[k],
@@ -257,7 +266,7 @@ Object.entries(VPOS).forEach(([k,ll])=>{
       html:`<div style="width:30px;height:30px;border-radius:50%;background:#0f4c5c;color:#fff;
         border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.5);display:flex;align-items:center;
         justify-content:center;font:700 15px/1 sans-serif">${VNO[k]}</div>`})}).addTo(map);
-  m.bindPopup(`<b>${VTITLE[k]}</b><br><video src="videos/${k}.mp4" poster="videos/${k}.jpg"
+  m.bindPopup(`<b>定位點 ${VSPOT[k]}・影片 ${VNO[k]}</b><br>${VTITLE[k]}<br><video src="videos/${k}.mp4" poster="videos/${k}.jpg"
      controls playsinline style="width:260px;margin-top:6px;border-radius:4px"></video>`,{maxWidth:280});
   m.on("dragend", dump);
   markers[k]=m;
@@ -273,7 +282,7 @@ function toggleEdit(){
 }
 function dump(){
   document.getElementById("coords").value = Object.entries(markers)
-    .map(([k,m])=>{const p=m.getLatLng(); return `${k}: ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}`;}).join("\n");
+    .map(([k,m])=>{const p=m.getLatLng(); return `${k} (${VSPOT[k]}): ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}`;}).join("\n");
 }
 </script>
 </body>

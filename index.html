@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>興國橡膠廠基地｜現況雜物盤點與清運說明</title>
+<meta name="description" content="興國橡膠廠基地 2026/09/14 現場會勘照片紀錄，依雜物類別分類說明清運範圍與注意事項。">
+<style>
+:root{
+  --ink:#1c1f23; --ink2:#4a5159; --ink3:#7b838c;
+  --bg:#f7f6f3; --card:#fff; --line:#e2e0da;
+  --accent:#0f4c5c; --accent2:#166b7f;
+  --warn:#9a4a12; --warnbg:#fdf3e9; --warnline:#f0d9bf;
+  --ok:#2d6a4f;
+  --max:1100px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+a{color:var(--accent2)}
+
+/* header */
+header{background:linear-gradient(160deg,#0f4c5c,#123c48 60%,#0c2f38);color:#fff;padding:48px 0 40px}
+header .eyebrow{font-size:13px;letter-spacing:.18em;color:#8fc4d1;margin:0 0 10px}
+header h1{margin:0 0 12px;font-size:clamp(24px,4.4vw,36px);line-height:1.3;font-weight:700}
+header p.sub{margin:0;color:#cfe3e9;font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.meta span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:6px 12px;border-radius:999px;font-size:13px;color:#e6f1f4}
+
+/* sections */
+section{padding:44px 0}
+h2{font-size:20px;margin:0 0 6px;letter-spacing:.02em}
+h2::before{content:"";display:inline-block;width:4px;height:18px;background:var(--accent);
+  margin-right:10px;vertical-align:-2px;border-radius:2px}
+.lead{color:var(--ink2);margin:0 0 24px;font-size:15px;max-width:70ch}
+
+/* summary */
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:26px}
+.sum div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.sum b{display:block;font-size:26px;color:var(--accent);font-weight:700;line-height:1.2}
+.sum small{color:var(--ink3);font-size:13px}
+
+.note{background:var(--warnbg);border:1px solid var(--warnline);border-left:4px solid var(--warn);
+  border-radius:8px;padding:16px 18px;color:#5c3512;font-size:14.5px}
+.note strong{color:var(--warn)}
+
+/* category cards */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;
+  display:flex;flex-direction:column;gap:10px}
+.cat .tag{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.dot{width:11px;height:11px;border-radius:3px;flex:none}
+.cat p{margin:0;font-size:14.5px;color:var(--ink2)}
+.cat .items{font-size:13.5px;color:var(--ink3);border-top:1px dashed var(--line);padding-top:10px}
+.pill{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;
+  border:1px solid var(--line);background:#faf9f6;color:var(--ink2);margin:3px 4px 0 0}
+.lvl{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;align-self:flex-start}
+.lvl.hi{background:#fbe9e7;color:#a8301c}
+.lvl.mid{background:var(--warnbg);color:var(--warn)}
+.lvl.low{background:#e8f2ec;color:var(--ok)}
+
+/* filter */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.filters button{border:1px solid var(--line);background:var(--card);color:var(--ink2);
+  padding:8px 15px;border-radius:999px;font-size:14px;cursor:pointer;font-family:inherit;transition:.15s}
+.filters button:hover{border-color:var(--accent2);color:var(--accent2)}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* gallery */
+.zone{margin-bottom:34px}
+.zone h3{font-size:16px;margin:0 0 4px;color:var(--accent)}
+.zone .zd{margin:0 0 14px;font-size:14px;color:var(--ink3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  overflow:hidden;cursor:zoom-in;transition:.15s}
+figure:hover{box-shadow:0 6px 18px rgba(0,0,0,.09);transform:translateY(-2px)}
+figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#eceae5}
+figcaption{padding:10px 12px 12px;font-size:13.5px;color:var(--ink2)}
+figcaption .no{color:var(--ink3);font-size:12px;display:block;margin-bottom:2px}
+.chips{margin-top:6px}
+.chips i{font-style:normal;font-size:11px;padding:2px 7px;border-radius:4px;margin-right:4px;
+  color:#fff;display:inline-block}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,18,20,.94);display:none;z-index:50;
+  align-items:center;justify-content:center;flex-direction:column;padding:24px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:6px}
+.lb .cap{color:#e8e8e6;font-size:14px;margin-top:14px;text-align:center;max-width:60ch}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;
+  width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+.lb .x{top:18px;right:18px}
+.lb .pv{left:14px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+
+/* table */
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;overflow:hidden;font-size:14.5px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1efe9;font-weight:700;font-size:13.5px;color:var(--ink2)}
+tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto}
+
+ol.steps{padding-left:20px;margin:0}
+ol.steps li{margin-bottom:12px;color:var(--ink2);font-size:15px}
+ol.steps b{color:var(--ink)}
+
+footer{background:#12222a;color:#9fb3bb;padding:30px 0;font-size:13.5px;margin-top:20px}
+footer a{color:#8fc4d1}
+.disc{font-size:12.5px;color:var(--ink3);margin-top:18px;line-height:1.7}
+@media(max-width:600px){section{padding:32px 0}header{padding:36px 0 30px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">現場會勘紀錄 ｜ SITE INSPECTION</p>
+    <h1>興國橡膠廠基地<br>現況雜物盤點與清運說明</h1>
+    <p class="sub">2026 年 9 月 14 日現場拍攝　｜　供業主確認清運範圍與後續處理方式</p>
+    <div class="meta">
+      <span>📅 拍攝日：2026/09/14</span>
+      <span>📷 現場照片 24 張＋影片 6 段</span>
+      <span>🏷 雜物分 6 類</span>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>一、現況摘要</h2>
+  <p class="lead">基地整體已停止使用，原廠房建物已拆除，中央留有面積完整的既有混凝土／瀝青鋪面，狀況尚可利用；雜物與植生則集中在鋪面周邊、通道及大門口一帶。以下就現場所見分類說明。</p>
+
+  <div class="sum">
+    <div><b>6 類</b><small>雜物類別</small></div>
+    <div><b>3 處</b><small>主要堆置區</small></div>
+    <div><b>2 項</b><small>須先檢核的風險項目</small></div>
+    <div><b>約 1/3</b><small>基地面積為草生／灌木覆蓋</small></div>
+  </div>
+
+  <div class="note">
+    <strong>⚠ 需優先釐清的兩件事</strong><br>
+    1. 現場散置多個 200 公升鐵桶（藍、綠、紅），<b>內容物尚未確認</b>。若含油品、化學品或橡膠製程殘留物，屬事業廢棄物，須委由合法清除處理機構處理，不可與一般廢棄物併同清運。<br>
+    2. 現場有大量金屬浪板／石棉瓦類板材，<b>是否含石棉尚待確認</b>。若確認含石棉，須依有害事業廢棄物程序辦理。<br>
+    上述兩項在數量與費用估算前，建議先行採樣或請清運業者到場判定。
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>二、雜物分類說明</h2>
+  <p class="lead">依現場照片所見，將待清運項目分為下列六類。「處理難度」為初步研判，實際以清運業者現勘報價為準。</p>
+  <div class="cats" id="cats"></div>
+</section>
+
+<section class="wrap">
+  <h2>三、現況照片（依區域）</h2>
+  <p class="lead">可用下方按鈕依雜物類別篩選照片；點擊照片可放大檢視。區域代號係依現場拍攝動線推定，實際方位以地籍圖標示為準。</p>
+  <div class="filters" id="filters"></div>
+  <div id="gallery"></div>
+  <p class="disc">※ 另有現場環景影片 6 段（走動式拍攝，涵蓋通道、鋪面與堆置區），因格式關係未收錄於本頁，可另行提供原始檔。</p>
+</section>
+
+<section class="wrap">
+  <h2>四、建議處理順序</h2>
+  <ol class="steps">
+    <li><b>桶槽內容物判定（最優先）</b>　清點鐵桶數量、開桶確認殘留物性質，必要時採樣送驗；判定屬一般或事業廢棄物後再分流清運。</li>
+    <li><b>板材含石棉與否判定</b>　浪板／石綿瓦類由清運業者或檢測單位現場判定，決定是否須分開處理。</li>
+    <li><b>可回收金屬先行變賣</b>　鏽蝕鋼樑、鐵製工作台、機台底座、鐵架等具回收價值，建議先與廢鐵回收商議價，可抵減部分清運成本。</li>
+    <li><b>一般廢棄物與營建廢料清運</b>　木棧板、木料、帆布、輪胎、家具家電等，依一般事業廢棄物／營建剩餘物程序清運。</li>
+    <li><b>雜草與自生林木整理</b>　全區割草、移除藤蔓與自生灌木（銀合歡、芒草為主），恢復基地可視性與可通行性。</li>
+    <li><b>鋪面整理與完工拍照</b>　清運後掃除鋪面碎屑，拍攝清運後對照照片，作為交屋／點交依據。</li>
+  </ol>
+</section>
+
+<section class="wrap">
+  <h2>五、清運範圍對照表</h2>
+  <div class="tw"><table id="tbl">
+    <thead><tr><th style="width:22%">類別</th><th style="width:34%">現場品項</th><th style="width:20%">分布位置</th><th>處理方式建議</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="disc">
+    本頁內容係依 2026/09/14 現場目視拍攝之照片整理，屬現況描述，不構成廢棄物種類之法定認定，亦未進行任何採樣檢測。
+    實際清運數量、分類與費用，應以合法清除處理機構現場勘查及報價為準；涉及事業廢棄物者，應依《廢棄物清理法》相關規定辦理。
+  </p>
+</section>
+
+<footer>
+  <div class="wrap">
+    興國橡膠廠基地・現況雜物盤點　｜　製作日期 2026/09/14<br>
+    本頁供業主內部溝通使用，未經同意請勿轉載。
+  </div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="x" onclick="closeLb()" aria-label="關閉">✕</button>
+  <button class="pv" onclick="step(-1)" aria-label="上一張">‹</button>
+  <button class="nx" onclick="step(1)" aria-label="下一張">›</button>
+  <img id="lbimg" alt="">
+  <div class="cap" id="lbcap"></div>
+</div>
+
+<script>
+const CATS = {
+  metal:{name:"廢鐵・鋼構件",     color:"#8a5a2b", lvl:"low",  lvlTxt:"可回收變賣",
+    desc:"鏽蝕鋼構樑、鐵製工作台、機台底座、鐵架、大型滾筒與軌道件，多數已鏽蝕但仍具廢鐵回收價值。",
+    items:["鏽蝕鋼樑／軌道","鐵製工作台","機台底座","鐵櫃・鐵架","大型滾筒"],
+    where:"中央鋪面周邊（B 區）", how:"先與廢鐵回收商議價變賣，抵減清運成本"},
+  drum:{name:"桶槽類（待確認）",   color:"#b03a2e", lvl:"hi",   lvlTxt:"高：須先判定",
+    desc:"現場散置多個 200 公升鐵桶及槽體，外觀鏽蝕、內容物不明。此類為本案清運的主要不確定因素。",
+    items:["200L 鐵桶（藍／綠／紅）","不明槽體","小型容器"],
+    where:"通道旁、大門口（A・C 區）", how:"開桶清點與採樣判定；屬事業廢棄物者交合法機構處理"},
+  constr:{name:"營建廢棄物・板材", color:"#a9741f", lvl:"mid",  lvlTxt:"中：含石棉疑慮",
+    desc:"金屬浪板、石綿瓦類板材、水泥板、木棧板與木料，部分為早期廠房拆除後遺留。",
+    items:["金屬浪板／石綿瓦類","水泥板","木棧板","廢木料","鋼筋碎料"],
+    where:"通道旁、大門口（A・C 區）", how:"先判定是否含石棉，再分流為一般或有害事業廢棄物"},
+  misc:{name:"帆布・塑膠・輪胎",   color:"#4a6fa5", lvl:"low",  lvlTxt:"低：一般清運",
+    desc:"廢帆布與大型廣告帆布、塑膠袋、廢輪胎，多為堆置遮蓋後遺留，體積大但重量輕。",
+    items:["廢帆布・廣告帆布","塑膠袋・編織袋","廢輪胎","塑膠桶"],
+    where:"大門口堆置區（C 區）", how:"一般事業廢棄物清運，輪胎另依回收管道處理"},
+  furn:{name:"家具・家電雜物",     color:"#6b5b95", lvl:"low",  lvlTxt:"低：一般清運",
+    desc:"白色鐵櫃、流理台、藍色檯面等生活型雜物，數量不多，集中在通道入口附近。",
+    items:["鐵櫃・流理台","層架","雜項家具"],
+    where:"通道入口（A 區）", how:"併同一般廢棄物清運"},
+  veg:{name:"雜草・自生林木",      color:"#3d7a4e", lvl:"mid",  lvlTxt:"中：面積大",
+    desc:"芒草、銀合歡等自生灌木與藤蔓大面積覆蓋，高度多及腰以上，部分區域已無法通行，也遮蔽了基地實際輪廓。",
+    items:["芒草・雜草","銀合歡等自生灌木","蔓藤","自生喬木"],
+    where:"基地外圍與北側（A・D 區）", how:"全區割草、移除灌木與藤蔓，恢復可視性與通行"}
+};
+
+const ZONES = [
+  {id:"A", title:"A 區｜入口通道與草生地", desc:"由通道進入基地的沿線，兩側雜草及腰，路旁散置鐵桶、板材與家具雜物。",
+   photos:[
+    {f:"p01.jpg", c:["veg"],                 t:"通道兩側灌木與藤蔓密布，高度及腰以上"},
+    {f:"p02.jpg", c:["veg","misc"],          t:"會勘現場：果樹下有磚造殘跡與零星雜物，中央為既有混凝土便道"},
+    {f:"p04.jpg", c:["drum","furn","constr"],t:"通道旁堆置：藍／綠鐵桶、白色鐵櫃與流理台、木棧板、藍色檯面"},
+    {f:"p05.jpg", c:["constr","metal"],      t:"藍色鐵架、廢木料、鏽鐵板與黑色橡膠布堆置於通道旁"},
+    {f:"p06.jpg", c:["veg"],                 t:"空地雜草蔓生，角落可見少量廢板材與鐵桶"},
+    {f:"p07.jpg", c:["veg"],                 t:"大面積草生地，遠處為鄰地住宅與廠房"},
+    {f:"p08.jpg", c:["veg"],                 t:"草高及腰，右側為既有碎石通道"}
+   ]},
+  {id:"B", title:"B 區｜中央鋪面與廢鐵集中區", desc:"基地核心為面積完整的既有混凝土／瀝青鋪面，表面有龜裂與油漬；廢鐵與鋼構件沿鋪面邊緣堆置。",
+   photos:[
+    {f:"p14.jpg", c:["metal"],   t:"鋪面全景：左側鐵製工作台與鐵箱，右側成堆鐵料"},
+    {f:"p15.jpg", c:["metal"],   t:"鋪面中央鐵料堆：鏽蝕鐵件、藍色鐵座、黃色槽體"},
+    {f:"p16.jpg", c:["metal"],   t:"同一堆置點另一角度，周邊雜草已侵入鋪面邊緣"},
+    {f:"p17.jpg", c:["metal"],   t:"左側鏽蝕鐵料與藍色鐵座，鋪面大致平整"},
+    {f:"p18.jpg", c:["metal"],   t:"右側長條鏽蝕鋼樑／軌道件沿邊界排列"},
+    {f:"p19.jpg", c:["metal"],   t:"鋪面全景，右側可見鋼樑與零星垃圾"},
+    {f:"p20.jpg", c:["metal"],   t:"鋼構樑、圓形大型滾筒、黃色設備件集中一線"},
+    {f:"p21.jpg", c:["metal"],   t:"長段鏽蝕鋼構樑與散落廢料，背景為鄰地紅磚舊廠房"},
+    {f:"p22.jpg", c:["metal","misc"], t:"鋪面遠景：鋼構樑旁散落藍色編織袋等垃圾"},
+    {f:"p23.jpg", c:["metal","misc"], t:"鋪面全景，右側鐵製工作台，左側散落藍色帆布袋"}
+   ]},
+  {id:"C", title:"C 區｜大門口堆置區", desc:"靠近大門與圍籬一側，堆置帆布、浪板、輪胎與鐵桶，為傾倒式堆放，屬視覺觀感影響最大的區域。",
+   photos:[
+    {f:"p24.jpg", c:["misc","constr"],        t:"大門口內側：鐵皮浪板、廣告帆布、廢輪胎與藍色木櫃傾倒堆置"},
+    {f:"p25.jpg", c:["misc","constr","drum"], t:"近景：帆布、浪板、輪胎與藍色鐵桶混雜"},
+    {f:"p26.jpg", c:["misc","constr","drum"], t:"廣角：左側帆布堆、右側鐵桶與雜物，中央鋪面尚屬空曠"},
+    {f:"p27.jpg", c:["drum","constr"],        t:"藍色鐵桶與白色浪板、廢木料散落鋪面"},
+    {f:"p28.jpg", c:["drum","constr"],        t:"同一堆置點：鐵桶、浪板、木料，右側雜草已逼近鋪面"}
+   ]},
+  {id:"D", title:"D 區｜外圍草生地", desc:"基地外圍高草帶，將中央鋪面包圍，影響基地完整性的視覺判讀。",
+   photos:[
+    {f:"p29.jpg", c:["veg"], t:"高草帶包圍中央鋪面，遠處為鄰地建物"},
+    {f:"p30.jpg", c:["veg"], t:"外圍芒草高度及胸，背景為鄰地紅磚廠房"}
+   ]}
+];
+
+/* ---------- render categories ---------- */
+document.getElementById("cats").innerHTML = Object.entries(CATS).map(([k,c])=>`
+  <div class="cat">
+    <span class="tag"><span class="dot" style="background:${c.color}"></span>${c.name}</span>
+    <span class="lvl ${c.lvl}">${c.lvlTxt}</span>
+    <p>${c.desc}</p>
+    <div class="items">${c.items.map(i=>`<span class="pill">${i}</span>`).join("")}</div>
+  </div>`).join("");
+
+/* ---------- render table ---------- */
+document.querySelector("#tbl tbody").innerHTML = Object.entries(CATS).map(([k,c])=>`
+  <tr><td><b>${c.name}</b></td><td>${c.items.join("、")}</td><td>${c.where}</td><td>${c.how}</td></tr>`).join("");
+
+/* ---------- render gallery ---------- */
+const all = [];
+ZONES.forEach(z=>z.photos.forEach(p=>all.push({...p, zone:z.id})));
+
+function chips(cs){return `<div class="chips">${cs.map(c=>`<i style="background:${CATS[c].color}">${CATS[c].name}</i>`).join("")}</div>`}
+
+document.getElementById("gallery").innerHTML = ZONES.map(z=>`
+  <div class="zone" data-zone="${z.id}">
+    <h3>${z.title}</h3>
+    <p class="zd">${z.desc}</p>
+    <div class="grid">
+      ${z.photos.map(p=>`
+        <figure data-cats="${p.c.join(' ')}" data-f="${p.f}">
+          <img src="photos/${p.f}" alt="${p.t}" loading="lazy">
+          <figcaption><span class="no">${p.f.replace('.jpg','').replace('p','照片 ')}</span>${p.t}${chips(p.c)}</figcaption>
+        </figure>`).join("")}
+    </div>
+  </div>`).join("");
+
+/* ---------- filters ---------- */
+const fbtns = [{k:"all",n:"全部照片"}].concat(Object.entries(CATS).map(([k,c])=>({k,n:c.name})));
+document.getElementById("filters").innerHTML = fbtns.map((b,i)=>
+  `<button data-k="${b.k}" aria-pressed="${i===0}">${b.n}</button>`).join("");
+
+document.getElementById("filters").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  const k = b.dataset.k;
+  document.querySelectorAll("#gallery figure").forEach(f=>{
+    f.hidden = !(k==="all" || f.dataset.cats.split(" ").includes(k));
+  });
+  document.querySelectorAll(".zone").forEach(z=>{
+    z.hidden = !z.querySelector("figure:not([hidden])");
+  });
+});
+
+/* ---------- lightbox ---------- */
+let idx = 0;
+const visible = ()=>[...document.querySelectorAll("#gallery figure:not([hidden])")];
+document.getElementById("gallery").addEventListener("click", e=>{
+  const fig = e.target.closest("figure"); if(!fig) return;
+  idx = visible().indexOf(fig); show();
+});
+function show(){
+  const v = visible(); if(!v.length) return;
+  idx = (idx + v.length) % v.length;
+  const fig = v[idx];
+  document.getElementById("lbimg").src = "photos/" + fig.dataset.f;
+  document.getElementById("lbcap").textContent = fig.querySelector("img").alt;
+  document.getElementById("lb").classList.add("on");
+}
+function step(d){ idx += d; show(); }
+function closeLb(){ document.getElementById("lb").classList.remove("on"); }
+document.getElementById("lb").addEventListener("click", e=>{ if(e.target.id==="lb") closeLb(); });
+document.addEventListener("keydown", e=>{
+  if(!document.getElementById("lb").classList.contains("on")) return;
+  if(e.key==="Escape") closeLb();
+  if(e.key==="ArrowRight") step(1);
+  if(e.key==="ArrowLeft") step(-1);
+});
+</script>
+</body>
+</html>
